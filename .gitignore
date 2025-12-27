@@ -28,3 +28,6 @@ annotation/*.fna
 !annotation/testdata/*
 
 anaconda_projects/
+.DS_Store
+**/.DS_Store
+
