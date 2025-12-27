@@ -1,0 +1,30 @@
+# --- Python / OS ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.DS_Store
+
+# --- Data: DO NOT COMMIT ---
+# your real expression data folder
+expression/*
+!expression/.gitkeep
+
+# if you have another raw data folder name, add it too:
+# expressions Daten/
+# expressions Daten/*
+
+# raw genome/annotation files (if you ever place them here)
+annotation/*.gtf
+annotation/*.gff
+annotation/*.fa
+annotation/*.fasta
+annotation/*.fna
+
+# --- allow demo/testdata ---
+!annotation/testdata/
+!annotation/testdata/*
+
+anaconda_projects/

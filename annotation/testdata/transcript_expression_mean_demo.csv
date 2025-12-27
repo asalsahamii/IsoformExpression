@@ -1,0 +1,6 @@
+transcript_id,genotype,timepoint,mean_TPM
+AT1G01010.1,wt,LL18,20
+AT1G01010.2,wt,LL18,5
+AT1G01010.1,7ko,LL18,3
+AT1G01010.2,7ko,LL18,12
+
