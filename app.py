@@ -11,6 +11,9 @@ GENE_ANNOTATION_PATH = "annotation/testdata/Thalemine_gene_names_demo.csv"
 SEGMENTS_PATH = "annotation/testdata/segments_demo.csv"   # exon + CDS
 EXPR_MEAN_PATH = "annotation/testdata/transcript_expression_mean_demo.csv"
 
+
+
+
 # ColorBrewer-like sequential scale (BuPu)
 COLOR_SCALE = px.colors.sequential.BuPu
 

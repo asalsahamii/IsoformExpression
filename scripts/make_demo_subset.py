@@ -15,7 +15,7 @@ GENES_KEEP = ["AT1G01010", "AT1G01020"]   # <-- ändere hier deine 2 Gene
 
 CONDITIONS_KEEP = [
     ("7ko", "LL18"),
-    ("WT",  "LL18"),
+    ("wt",  "LL18"),
 ]
 
 def main():
@@ -32,7 +32,7 @@ def main():
         & (segments_df["feature"].isin(["exon", "CDS"]))
     ].copy()
 
-    # if a gene has no segments -> stop early (prevents your dashboard error)
+    # if a gene has no segments -> stop early
     found_genes = sorted(segments_demo["gene_id"].unique())
     missing = sorted(set(GENES_KEEP) - set(found_genes))
     if missing:
@@ -51,7 +51,7 @@ def main():
 
     expr_demo = expr_mean_df[cond_mask & expr_mean_df["transcript_id"].isin(transcripts_keep)].copy()
 
-    # ---- sanity check: expression exists for both conditions ----
+    # ----  expression exists for both conditions ----
     cond_present = expr_demo[["genotype", "timepoint"]].drop_duplicates()
     print("Conditions present in demo:", cond_present.values.tolist())
 
@@ -60,7 +60,7 @@ def main():
     segments_demo.to_csv(OUT_SEGMENTS, index=False)
     expr_demo.to_csv(OUT_EXPR_MEAN, index=False)
 
-    print("✅ Demo files created:")
+    print("Demo files created:")
     print(" -", OUT_GENE_ANNOTATION, f"({len(genes_demo)} rows)")
     print(" -", OUT_SEGMENTS, f"({len(segments_demo)} rows)")
     print(" -", OUT_EXPR_MEAN, f"({len(expr_demo)} rows)")
